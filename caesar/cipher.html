@@ -1,0 +1,23 @@
+<DOCTYPE! html>
+<html>
+<body>
+<script>
+function encryptText(s) {
+  var ascii="";
+ if(s.length>0)
+ for(i=0; i<s.length; i++)
+ {
+ var c = ""+s.charCodeAt(i);
+ while(c.length < 3)
+ c = "0"+c;
+ ascii += c + ",";
+ }
+ return(ascii.split(","));
+}
+/*add shift integer to ascii code strings in array...how?
+convert array to multiple single index arrays
+convert strings to integers and add shift integer*/
+
+</script>
+</body>
+</html>
