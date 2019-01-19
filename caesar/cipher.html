@@ -12,11 +12,21 @@ function encryptText(s) {
  c = "0"+c;
  ascii += c + ",";
  }
- return(ascii.split(","));
+var singleArrays = ascii.split(",");
+singleArrays.pop();
+
+while (singleArrays.length > 0) {
+  chunk = singleArrays.splice(0,1);
+  console.log(chunk);
+}
+
+
 }
 /*add shift integer to ascii code strings in array...how?
 convert array to multiple single index arrays
 convert strings to integers and add shift integer*/
+
+
 
 </script>
 </body>
