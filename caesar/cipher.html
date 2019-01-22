@@ -17,25 +17,26 @@ function encryptText(text,shift) {
 var asciiArray = ascii.split(",");
 asciiArray.pop();
 var plusShiftArray = parseInt(asciiArray);
-
 plusShiftArray = asciiArray.map(function(v) {
-  return parseInt(v) + parseInt(shift);
+  if (v>65&&v<90||v>97&&v<122){
+    return parseInt(v) + parseInt(shift);
+  }
+  else if (parseInt(v) + parseInt(shift) == 91) {
+    return 65;
+  }
+  else if (parseInt(v) + parseInt(shift) == 122) {
+    return 97;
+  }
+  else {
+    return parseInt(v) + 0;
+  }
+
 });
 
-var caesarString;
-for(i=0; i<plusShiftArray.length;i++){
-  var caesar = String.fromCharCode(i);
-  while(caesar.length<3)
-  caesarString += caesar;
-  console.log(caesarString);
+var caesarString = String.fromCharCode.apply(this,plusShiftArray);
 
+console.log(caesarString);
 }
-
-
-}
-
-
-
 </script>
 </body>
 </html>
